@@ -20,7 +20,7 @@ export default function Home() {
             fontWeight:600,
             textDecoration:'underline'
           }}>
-            Revan Muhammad Dafa
+            Yulia Nanda
           </span>
         </div>
         <div>

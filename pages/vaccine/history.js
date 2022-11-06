@@ -12,7 +12,7 @@ export default function Home() {
                     </Link>
                 </div>
                 <div>
-                    Revan Muhammad Dafa
+                    Yulia Nanda
                 </div>
             </div>
 

@@ -27,7 +27,7 @@ export default function Home() {
                         <div
                             style={{position:'relative', top:'5px', marginLeft:'10px'}}
                         >
-                            Revan Muhammad Dafa
+                            Yulia Nanda
                         </div>
                     </div>
                     <div className="page-status-name-divider"></div>
@@ -38,7 +38,7 @@ export default function Home() {
                         <div
                             style={{position:'relative', marginLeft:'10px'}}
                         >
-                            3216192108990002
+                            1306144706960001
                         </div>
                     </div>
                 </div>
