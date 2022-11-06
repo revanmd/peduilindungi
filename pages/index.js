@@ -1,3 +1,6 @@
+import Link from "next/link"
+
+
 export default function Home() {
   return (
     <div
@@ -82,7 +85,11 @@ export default function Home() {
               <div
                 style={{position:'absolute', left:'18px', top:'8px'}}
               >
-                <img src="/assets/icon/h-scan.jpeg" style={{width:'15px'}}></img> <span style={{position:'relative',top:'-3px', fontWeight:500}}>Check-in</span>
+                <Link
+                  href="/check-in/config"
+                >
+                  <img src="/assets/icon/h-scan.jpeg" style={{width:'15px'}}></img> <span style={{position:'relative',top:'-3px', fontWeight:500}}>Check-in</span>
+                </Link>
               </div>
             </div>
         </div>
@@ -123,7 +130,11 @@ export default function Home() {
         >
           <img style={{width:'67px'}} src="/assets/icon/h1.jpeg"></img>
           <div className="menu-text">
-            Vaksin dan Imunisasi
+            <Link
+              href="/vaccine"
+            >
+              Vaksin dan Imunisasi
+            </Link>
           </div>
         </div>
         <div>
