@@ -1,7 +1,19 @@
 import Link from "next/link"
+import { useRouter } from "next/router"
+import { useEffect, useState } from "react"
 
 
 export default function Home() {
+  const Router = useRouter()
+
+  const [Nama, setNama] = useState()
+  const [NIK, setNIK] = useState()
+
+  useEffect(()=>{
+    setNama(localStorage.getItem('nama'))
+    setNIK(localStorage.getItem('nik'))
+  },[])
+
   return (
     <div
       className="container"
@@ -20,11 +32,15 @@ export default function Home() {
             fontWeight:600,
             textDecoration:'underline'
           }}>
-            Yulia Nanda
+            {Nama}
           </span>
         </div>
         <div>
-          <img src="/assets/icon/h-notification.jpeg" style={{width:'20px'}}></img>
+          <Link
+            href="/config"
+          >
+            <img src="/assets/icon/h-notification.jpeg" style={{width:'20px'}}></img>
+          </Link>
         </div>
       </div>
 
@@ -86,7 +102,7 @@ export default function Home() {
                 style={{position:'absolute', left:'18px', top:'8px'}}
               >
                 <Link
-                  href="/check-in/config"
+                  href="/check-in"
                 >
                   <img src="/assets/icon/h-scan.jpeg" style={{width:'15px'}}></img> <span style={{position:'relative',top:'-3px', fontWeight:500}}>Check-in</span>
                 </Link>

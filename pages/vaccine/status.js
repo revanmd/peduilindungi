@@ -1,13 +1,22 @@
 import Link from "next/link";
+import { useState } from "react";
+
 
 export default function Home() {
+    const [Nama, setNama] = useState()
+    const [NIK, setNIK] = useState()
+  
+    useEffect(()=>{
+      setNama(localStorage.getItem('nama'))
+      setNIK(localStorage.getItem('nik'))
+    },[])
     return (
         <div>
             <div className="container">
                 <div className="page-nav-back">
                     <div>
                         <Link
-                            href="/vaccine/"
+                            href="/"
                         >
                             <img src="/assets/icon/back.jpeg" style={{width:'17px'}}></img>
                         </Link>
@@ -27,7 +36,7 @@ export default function Home() {
                         <div
                             style={{position:'relative', top:'5px', marginLeft:'10px'}}
                         >
-                            Yulia Nanda
+                            {Nama}
                         </div>
                     </div>
                     <div className="page-status-name-divider"></div>
@@ -38,7 +47,7 @@ export default function Home() {
                         <div
                             style={{position:'relative', marginLeft:'10px'}}
                         >
-                            1306144706960001
+                            {NIK}
                         </div>
                     </div>
                 </div>

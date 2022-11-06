@@ -1,6 +1,15 @@
 import Link from "next/link";
+import { useState } from "react";
 
 export default function Home() {
+    const [Nama, setNama] = useState()
+    const [NIK, setNIK] = useState()
+  
+    useEffect(()=>{
+      setNama(localStorage.getItem('nama'))
+      setNIK(localStorage.getItem('nik'))
+    },[])
+
     return (
         <div className="container">
             <div className="page-nav-back">
@@ -12,7 +21,7 @@ export default function Home() {
                     </Link>
                 </div>
                 <div>
-                    Yulia Nanda
+                    {Nama}
                 </div>
             </div>
 

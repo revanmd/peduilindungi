@@ -3,12 +3,14 @@ import { useEffect, useState } from "react";
 
 export default function Home() {
   const [Nama, setNama] = useState();
+  const [NIK, setNIK] = useState();
   const [Lokasi, setLokasi] = useState();
   const [Pengunjung, setPengunjung] = useState();
   const [Total, setTotal] = useState();
 
   useEffect(() => {
     setNama(localStorage.getItem("nama"));
+    setNIK(localStorage.getItem("nik"))
     setLokasi(localStorage.getItem("lokasi"));
     setPengunjung(localStorage.getItem("pengunjung"));
     setTotal(localStorage.getItem("total"));
@@ -16,17 +18,18 @@ export default function Home() {
 
   useEffect(() => {
     localStorage.setItem("nama", Nama);
+    localStorage.setItem('nik', NIK)
     localStorage.setItem("lokasi", Lokasi);
     localStorage.setItem("pengunjung", Pengunjung);
     localStorage.setItem("total", Total);
-  }, [Nama, Lokasi, Pengunjung, Total]);
+  }, [Nama, Lokasi, Pengunjung, Total, NIK]);
 
   return (
     <div>
       <div className="container">
         <div className="page-nav-back">
           <div>
-            <Link href="/vaccine/">
+            <Link href="/">
               <img src="/assets/icon/back.jpeg" style={{ width: "17px" }}></img>
             </Link>
           </div>
@@ -63,6 +66,16 @@ export default function Home() {
             />
           </div>
           <div className="form-control">
+            <label style={{ display: "block" }}>NIK</label>
+            <input
+              type="text"
+              value={NIK}
+              onChange={(e) => {
+                setNIK(e.target.value);
+              }}
+            />
+          </div>
+          <div className="form-control">
             <label style={{ display: "block" }}>Lokasi</label>
             <input
               type="text"
@@ -92,7 +105,7 @@ export default function Home() {
               }}
             />
           </div>
-          <Link href="/check-in">
+          <Link href="/">
             <button
               style={{
                 width: "100%",
@@ -104,7 +117,7 @@ export default function Home() {
                 borderRadius: "3px",
               }}
             >
-              Check-in
+              Simpan
             </button>
           </Link>
         </div>
