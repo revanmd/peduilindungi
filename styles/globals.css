@@ -178,3 +178,44 @@ input:focus {
   border:1px solid #03a9f4 !important;
   outline: none !important;
 }
+
+
+.eligible-green-base{
+  background-color: #04944f;
+  color: white;
+  padding-top: 30px;
+  padding-bottom: 80px;
+}
+
+.eligible-green-base h3, .eligible-green-base h4 {
+  text-align: center;
+  margin: 20px;
+}
+.eligible-green-base h4 {
+  font-weight: 300;
+  font-size: 16px;
+}
+.eligible-green-base h3 {
+  font-weight: 600;
+  font-size: 24px;
+}
+.eligible-info{
+  position: relative;
+  top:-25px;
+  background-color: white;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  text-align: center;
+  padding: 5px;
+}
+
+.eligible-info h3{
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.container-eligible-details{
+  padding:10px;
+  text-align: left;
+}
+

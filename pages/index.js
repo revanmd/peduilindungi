@@ -162,7 +162,11 @@ export default function Home() {
         <div>
           <img style={{width:'56px'}} src="/assets/icon/h3.jpeg"></img>
           <div className="menu-text" style={{position:'relative', top:'4px'}}>
-            Aturan Perjalanan
+            <Link
+              href='/eligible'
+            >
+              Aturan Perjalanan
+            </Link>
           </div>
         </div>
         <div>

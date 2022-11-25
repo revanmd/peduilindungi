@@ -8,12 +8,20 @@ export default function Home() {
   const [Pengunjung, setPengunjung] = useState();
   const [Total, setTotal] = useState();
 
+  const [Bandara, setBandara] = useState()
+  const [Hari, setHari] = useState()
+  const [Jam, setJam] = useState()
+
   useEffect(() => {
     setNama(localStorage.getItem("nama"));
     setNIK(localStorage.getItem("nik"))
     setLokasi(localStorage.getItem("lokasi"));
     setPengunjung(localStorage.getItem("pengunjung"));
     setTotal(localStorage.getItem("total"));
+
+    setBandara(localStorage.getItem("bandara"));
+    setHari(localStorage.getItem("hari"));
+    setJam(localStorage.getItem("jam"));
   }, []);
 
   useEffect(() => {
@@ -22,7 +30,11 @@ export default function Home() {
     localStorage.setItem("lokasi", Lokasi);
     localStorage.setItem("pengunjung", Pengunjung);
     localStorage.setItem("total", Total);
-  }, [Nama, Lokasi, Pengunjung, Total, NIK]);
+
+    localStorage.setItem("bandara", Bandara);
+    localStorage.setItem("hari", Hari);
+    localStorage.setItem("jam", Jam);
+  }, [Nama, Lokasi, Pengunjung, Total, NIK, Bandara, Hari, Jam]);
 
   return (
     <div>
@@ -102,6 +114,36 @@ export default function Home() {
               value={Total}
               onChange={(e) => {
                 setTotal(e.target.value);
+              }}
+            />
+          </div>
+          <div className="form-control">
+            <label style={{ display: "block" }}>Bandara</label>
+            <input
+              type="text"
+              value={Bandara}
+              onChange={(e) => {
+                setBandara(e.target.value);
+              }}
+            />
+          </div>
+          <div className="form-control">
+            <label style={{ display: "block" }}>Hari</label>
+            <input
+              type="text"
+              value={Hari}
+              onChange={(e) => {
+                setHari(e.target.value);
+              }}
+            />
+          </div>
+          <div className="form-control">
+            <label style={{ display: "block" }}>JAM</label>
+            <input
+              type="text"
+              value={Jam}
+              onChange={(e) => {
+                setJam(e.target.value);
               }}
             />
           </div>
